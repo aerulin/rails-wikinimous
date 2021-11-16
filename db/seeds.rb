@@ -1,11 +1,12 @@
 require 'faker'
 
-puts 'Creating 100 articles...'
+puts 'Creating 50 articles...'
 
-100.times do
+50.times do
   article = Article.new(
-    title: Faker::Marketing.buzzwords,
-    content: Faker::Hipster.sentences.sample
+    title: Faker::Book.title,
+    content: Faker::Lorem.paragraph(sentence_count: 5),
+    image: "https://unsplash.it/400/400?image=#{rand(500)}"
   )
   article.save!
 end

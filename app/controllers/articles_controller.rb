@@ -32,7 +32,8 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to articles_path, alert: "Invalid email or password"
+    flash[:notice] = 'Successfully checked in'
+    redirect_to articles_path
   end
 
   private

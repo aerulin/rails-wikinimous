@@ -1,7 +1,13 @@
 <h1>Available articles</h1>
-
-<ul>
+<div class="cards">
 <% @articles.each do |article| %>
-  <li class="article-link"><a href="/articles/<%= article.id %>"><%= article.title.capitalize %></li></a>
+  <div class="cards__item">
+    <img src="<%= article.image %>" alt="Picture">
+    <div class="card__content">
+      <h3><%= article.title.capitalize %></h3>
+      <p><%= article.content %></p>
+      <a href="/articles/<%= article.id %>" class="btn">Access</a>
+   </div>
+  </div>
 <% end %>
-</ul>
+</div>

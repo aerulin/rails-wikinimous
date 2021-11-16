@@ -1,6 +1,12 @@
-<h1><%= @article.title %></h1>
+<div class="banner">
+  <img src="<%= @article.title %>" alt="image" class="background-image">
+  <h1><%= @article.title %></h1>
+
+</div>
+
+
 
 <h4>Content: <%= @article.content %></h4>
 
-<a href="/articles/<%= @article.id %>/edit" class="button">✍️ Edit this article</a>
-<a href="/articles/<%= @article.id %>" data-method="delete" class="button"> 🗑 Delete this article</a>
+<a href="/articles/<%= @article.id %>/edit" class="btn">✍️ Edit this article</a>
+<a href="/articles/<%= @article.id %>" data-method="delete" class="btn"> 🗑 Delete this article</a>

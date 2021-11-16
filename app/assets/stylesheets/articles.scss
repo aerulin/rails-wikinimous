@@ -1,68 +1,130 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+html {
+  background-color: #f0f0f0;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: grey;
+  color: gray;
+  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+}
+img {
+  width: 100%;
+  height: 200px;
 }
 
-a {
-  text-decoration: none;
-  color: grey;
-}
-
-.button {
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid grey;
-  border-radius: 30px;
-  margin-right: 10px;
-  margin-bottom: 50px;
-}
-
-.button:hover {
+.btn {
+  background-color: white;
+  border: 1px solid lightgrey;
+  //border-radius: 1rem;
   color: darkgray;
-  background-color: rgb(243, 243, 243);
-  border: 1px solid darkgray;
+  padding: 0.5rem;
+  text-transform: lowercase;
 }
 
-li:before { content: '\1F4D9'; margin-left: -20px; margin-right: 10px; }
-
-.article-link:hover {
-  color: rgb(93, 93, 93);
-  font-weight: bold;
+.btn--block {
+  display: block;
+  width: 100%;
 }
 
-#new_article {
-  margin-bottom: 30px;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
 }
 
-#new_article input {
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid grey;
-  border-radius: 30px;
-  margin-right: 10px;
+.cards__item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid lightgrey;
+  padding: 0px;
+  @media(min-width: 40rem) {
+    width: 40%;
+  }
+  @media(min-width: 56rem) {
+    width: 27.3333%;
+  }
 }
 
-#new_article input:hover{
-  border: 1px solid rgb(35, 35, 35);
-  color: 1px solid rgb(35, 35, 35);
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  &:hover {
+    .card__image {
+      filter: contrast(100%);
+    }
+  }
 }
 
-#edit_article {
-  margin-bottom: 50px;
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: space-between;
 }
 
-#edit_article input {
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid grey;
-  border-radius: 30px;
-  margin-right: 10px;
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(70%);
+  //filter: saturate(180%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);;
+  &::before {
+    content: "";
+	  display: block;
+    padding-top: 56.25%; // 16:9 aspect ratio
+  }
+  @media(min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%; // 3:2 aspect ratio
+    }
+  }
 }
 
-#edit_article input:hover{
-  border: 1px solid rgb(35, 35, 35);
-  color: 1px solid rgb(35, 35, 35);
+.card__title {
+  color: darkgray;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card__text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  color: white;
+  background-color: grey;
 }
