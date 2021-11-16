@@ -1,0 +1,7 @@
+<h1>Available articles</h1>
+
+<ul>
+<% @articles.each do |article| %>
+  <li class="article-link"><a href="/articles/<%= article.id %>"><%= article.title.capitalize %></li></a>
+<% end %>
+</ul>

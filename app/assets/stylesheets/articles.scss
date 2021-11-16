@@ -1,0 +1,68 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: grey;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+.button {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 30px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+
+.button:hover {
+  color: darkgray;
+  background-color: rgb(243, 243, 243);
+  border: 1px solid darkgray;
+}
+
+li:before { content: '\1F4D9'; margin-left: -20px; margin-right: 10px; }
+
+.article-link:hover {
+  color: rgb(93, 93, 93);
+  font-weight: bold;
+}
+
+#new_article {
+  margin-bottom: 30px;
+}
+
+#new_article input {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 30px;
+  margin-right: 10px;
+}
+
+#new_article input:hover{
+  border: 1px solid rgb(35, 35, 35);
+  color: 1px solid rgb(35, 35, 35);
+}
+
+#edit_article {
+  margin-bottom: 50px;
+}
+
+#edit_article input {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 30px;
+  margin-right: 10px;
+}
+
+#edit_article input:hover{
+  border: 1px solid rgb(35, 35, 35);
+  color: 1px solid rgb(35, 35, 35);
+}
